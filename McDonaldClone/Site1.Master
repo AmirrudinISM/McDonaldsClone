@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="McDonaldClone.Site1" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+
+    <title>McDonald Clone</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <a href="Default.aspx">Home</a> &nbsp;|&nbsp; 
+            <a href="Menu.aspx" >Menu</a>  &nbsp;|&nbsp;
+            <a href="MyAccount.aspx" >My Account</a> &nbsp; | &nbsp;
+            <a href="#" >About Us</a>
+
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
