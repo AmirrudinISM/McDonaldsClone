@@ -30,8 +30,8 @@ namespace McDonaldClone {
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) {
             lblSelectedItem_ID.Text = GridView1.SelectedRow.Cells[1].Text;
-            lblSelectedItem_Name.Text = GridView1.SelectedRow.Cells[3].Text;
-            lblSelectedItem_Price.Text = GridView1.SelectedRow.Cells[4].Text;
+            lblSelectedItem_Name.Text = GridView1.SelectedRow.Cells[2].Text;
+            lblSelectedItem_Price.Text = GridView1.SelectedRow.Cells[3].Text;
 
         }
 
@@ -91,7 +91,15 @@ namespace McDonaldClone {
                 conn.Close();
             }
         }
-
+        void ClearReceipt() {
+            lblSubtotal.Text = "RM0.00";
+            lblServiceCharge.Text = "RM0.00";
+            lblServiceTax.Text = "RM0.00";
+            lblGrandTotal.Text = "RM0.00";
+            lblSelectedItem_ID.Text = "";
+            lblSelectedItem_Name.Text = "";
+            lblSelectedItem_Price.Text = "";
+        }
         void ClearCart() {
             SqlCommand cmd = new SqlCommand("spClearCart", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -139,6 +147,14 @@ namespace McDonaldClone {
         protected void btnConfirm_Click(object sender, EventArgs e) {
             ConfirmPurchase();
             GridViewCart.DataBind();
+            ClearReceipt();
+
+        }
+
+        protected void btnClearCart_Click(object sender, EventArgs e) {
+            ClearCart();
+            GridViewCart.DataBind();
+            ClearReceipt();
         }
     }
 }

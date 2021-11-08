@@ -1,4 +1,12 @@
-﻿.left {
+﻿body {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+
+}
+
+.left {
     width: 600px;
     float: left;
     margin-top: 10px;
