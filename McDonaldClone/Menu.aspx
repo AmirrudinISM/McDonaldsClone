@@ -1,10 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="McDonaldClone.Menu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
+    <style type="text/css">
+        .auto-style1 {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+    </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">
-        <div class="col-8">
+    <table>
+        <tr>
+            <td>
+                <div class="col-8">
             <h1>Menu</h1>
             
                 <asp:DropDownList ID="ddlCategories" runat="server" AutoPostBack="True" CssClass="btn dropdown-header dropdown-toggle">
@@ -17,7 +33,7 @@
             
             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="FoodID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="table table-hover">
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-secondary" />
                     <asp:BoundField DataField="FoodID" HeaderText="Food ID" InsertVisible="False" ReadOnly="True" SortExpression="FoodID" >
                     <HeaderStyle ForeColor="#666666" />
                     </asp:BoundField>
@@ -46,41 +62,49 @@
             <asp:Label ID="lblSelectedItem_Price" runat="server" Text=""></asp:Label>
             <br />
             <asp:Label ID="lblQuantity" runat="server" Text="Quantity: "></asp:Label>
-            <asp:TextBox ID="txtQuantity" runat="server" TextMode="Number" Text="0"></asp:TextBox><asp:Button ID="addToCart" runat="server" Text="Add to Cart" OnClick="addToCart_Click" />
+            <asp:TextBox ID="txtQuantity" runat="server" TextMode="Number" Text="0" CssClass="auto-style1" Width="398px"></asp:TextBox><asp:Button ID="addToCart" runat="server" Text="Add to Cart" OnClick="addToCart_Click" CssClass="btn" />
             <br />
             <asp:Label ID="lblErrorMessage1" runat="server" Text=""></asp:Label>
         </div>
-        <div class="col-md-auto">
-            <h4>Sales Cart</h4>  
-            <asp:GridView ID="GridViewCart" runat="server" DataSourceID="SqlDataSourceCart" AutoGenerateColumns="False" CssClass="table table-sm">
-                <Columns>
-                    <asp:BoundField DataField="FoodID" HeaderText="FoodID" SortExpression="FoodID" />
-                    <asp:BoundField DataField="FoodName" HeaderText="FoodName" SortExpression="FoodName" />
-                    <asp:BoundField DataField="FoodPrice" HeaderText="FoodPrice" SortExpression="FoodPrice" />
-                    <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
-                    <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" ReadOnly="True" SortExpression="SubTotal" />
-                </Columns>
-            </asp:GridView>
-            <asp:Label ID="Label1" runat="server" Text="Subtotal: " CssClass="text-left"></asp:Label>
-            <asp:Label ID="lblSubtotal" runat="server" Text="" CssClass="text-right"></asp:Label>
-            <br />
-            <asp:Label ID="Label2" runat="server" Text="Service charge (10%): " CssClass="text-left"></asp:Label>
-            <asp:Label ID="lblServiceCharge" runat="server" Text="" CssClass="text-right"></asp:Label>
-            <br />
-            <asp:Label ID="Label3" runat="server" Text="Service tax (6%): " CssClass="text-left"></asp:Label>
-            <asp:Label ID="lblServiceTax" runat="server" Text="" CssClass="text-right"></asp:Label >
-            <br />
-            <h5>
-                <asp:Label ID="Label4" runat="server" Text="Grand total: " CssClass="text-left"></asp:Label>
-                <asp:Label ID="lblGrandTotal" runat="server" CssClass="text-right" ForeColor="#00CC00"></asp:Label>
-            </h5>
+            </td>
+            <td style="vertical-align:top; width:max-content;">
+                <div class="col">
+                    <h4>Sales Cart</h4>  
+                    <asp:GridView ID="GridViewCart" runat="server" DataSourceID="SqlDataSourceCart" AutoGenerateColumns="False" CssClass="table table-sm">
+                        <Columns>
+                            <asp:BoundField DataField="FoodID" HeaderText="FoodID" SortExpression="FoodID" />
+                            <asp:BoundField DataField="FoodName" HeaderText="FoodName" SortExpression="FoodName" />
+                            <asp:BoundField DataField="FoodPrice" HeaderText="FoodPrice" SortExpression="FoodPrice" />
+                            <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+                            <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" ReadOnly="True" SortExpression="SubTotal" />
+                        </Columns>
+                    </asp:GridView>
+                    <asp:Label ID="Label1" runat="server" Text="Subtotal: " CssClass="text-left"></asp:Label>
+                    <asp:Label ID="lblSubtotal" runat="server" Text="" CssClass="text-right"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label2" runat="server" Text="Service charge (10%): " CssClass="text-left"></asp:Label>
+                    <asp:Label ID="lblServiceCharge" runat="server" Text="" CssClass="text-right"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label3" runat="server" Text="Service tax (6%): " CssClass="text-left"></asp:Label>
+                    <asp:Label ID="lblServiceTax" runat="server" Text="" CssClass="text-right"></asp:Label >
+                    <br />
+                    <h5>
+                        <asp:Label ID="Label4" runat="server" Text="Grand total: " CssClass="text-left"></asp:Label>
+                        <asp:Label ID="lblGrandTotal" runat="server" CssClass="text-right" ForeColor="#00CC00"></asp:Label>
+                    </h5>
             
-            <br />
-            <asp:Button ID="btnConfirm" runat="server" OnClick="btnConfirm_Click" Text="Confirm Order" />
-            <asp:Button ID="btnClearCart" runat="server" Text="Empty Cart" OnClick="btnClearCart_Click" />
-            <br />
-            <asp:Label ID="lblErrorMessage2" runat="server" Text=""></asp:Label>
-        </div>
+                    <br />
+                    <asp:Button ID="btnConfirm" runat="server" OnClick="btnConfirm_Click" Text="Confirm Order" CssClass="btn btn-primary" />
+                    <asp:Button ID="btnClearCart" runat="server" Text="Empty Cart" OnClick="btnClearCart_Click" CssClass="btn btn-secondary" />
+                    <br />
+                    <asp:Label ID="lblErrorMessage2" runat="server" Text=""></asp:Label>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="row">
+        
+        
     </div>
     
     <asp:SqlDataSource ID="SqlDataSourceCart" runat="server" ConnectionString="<%$ ConnectionStrings:connMcDonalds %>" SelectCommand="spGetCartList" SelectCommandType="StoredProcedure">

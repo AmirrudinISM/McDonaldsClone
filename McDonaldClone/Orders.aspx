@@ -3,14 +3,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:SqlDataSource ID="SqlDataSourceOrders" runat="server" ConnectionString="<%$ ConnectionStrings:connMcDonalds %>" SelectCommand="SELECT * FROM [Orders]"></asp:SqlDataSource>
-    <asp:GridView ID="GridViewOrderList" runat="server" AllowPaging="True" AllowSorting="True" DataSourceID="SqlDataSourceOrders" OnSelectedIndexChanged="GridViewOrderList_SelectedIndexChanged" DataKeyNames="OrderID">
+    <asp:GridView ID="GridViewOrderList" runat="server" AllowPaging="True" AllowSorting="True" DataSourceID="SqlDataSourceOrders" OnSelectedIndexChanged="GridViewOrderList_SelectedIndexChanged" DataKeyNames="OrderID" CssClass="table table-hover">
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
         </Columns>
     </asp:GridView>
     <b>Customer Name: </b><asp:Label ID="lblCustomerName" runat="server" Text=""></asp:Label>
     <br />
-    <asp:GridView ID="GridViewOrderDetail" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceOrderDetail">
+    <asp:GridView ID="GridViewOrderDetail" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceOrderDetail" CssClass="table table-light">
         <Columns>
             <asp:BoundField DataField="FoodName" HeaderText="FoodName" SortExpression="FoodName" />
             <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
@@ -22,7 +22,7 @@
     <br />
     <b>Service tax (6%): </b><asp:Label ID="lblServiceTax" runat="server" Text=""></asp:Label>
     <br />
-    <b>Grand Total: </b><asp:Label ID="lblGrandTotal" runat="server" Text=""></asp:Label>
+    <b>Grand Total: </b><asp:Label ID="lblGrandTotal" runat="server" Font-Size="Large" ForeColor="#009933"></asp:Label>
     <asp:SqlDataSource ID="SqlDataSourceOrderDetail" runat="server" ConnectionString="<%$ ConnectionStrings:connMcDonalds %>" SelectCommand="SELECT FoodItem.FoodName, OrderDetail.Quantity 
 FROM OrderDetail
 INNER JOIN FoodItem ON OrderDetail.FoodID = FoodItem.FoodID

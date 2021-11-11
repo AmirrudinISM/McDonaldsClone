@@ -17,7 +17,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container">
+        
             <nav class="navbar navbar-light bg-light">
                 <a class="navbar-brand" href="Default.aspx">
                     <img src="McDonald_Menu_Images/Mcdonalds_logo_PNG8.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -44,16 +44,20 @@
                   </div>
             </nav>
             
-        </div>
-        <div class="container-fluid">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        <div id="main" class="container">
+            <div id="wrap">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 
-            </asp:ContentPlaceHolder>
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
-        <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-            <p>Developed by Ikhmal Rabani bin Bistamam & Amirrudin Ismail bin Adlan Rahim</p>
-        </footer>
+        
+            <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top footer">
+                <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+                <p>Developed by Ikhmal Rabani bin Bistamam & Amirrudin Ismail bin Adlan Rahim</p>
+            </footer>
+        
     </form>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

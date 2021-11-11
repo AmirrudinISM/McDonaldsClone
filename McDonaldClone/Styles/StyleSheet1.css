@@ -1,6 +1,7 @@
 ﻿body {
     font-family: 'Poppins', sans-serif;
     font-family: 'Roboto', sans-serif;
+    height:100%;
 }
 .header{
 
@@ -16,4 +17,21 @@
     margin-left: 650px;
     margin-top: 10px;
     
+}
+
+.footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear: both;
+    padding-top: 20px;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 150px;
 }
