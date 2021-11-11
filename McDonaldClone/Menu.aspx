@@ -17,12 +17,11 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1>Menu</h1>
     <table>
         <tr>
             <td>
                 <div class="col-8">
-            <h1>Menu</h1>
-            
                 <asp:DropDownList ID="ddlCategories" runat="server" AutoPostBack="True" CssClass="btn dropdown-header dropdown-toggle">
                 <asp:ListItem Value="BURGER">Burger</asp:ListItem>
                 <asp:ListItem Value="CHICKEN">Chicken</asp:ListItem>
@@ -31,9 +30,9 @@
             </asp:DropDownList>
            
             
-            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="FoodID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="table table-hover">
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="FoodID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="table" BorderStyle="None">
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-secondary" />
+                    <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-light" />
                     <asp:BoundField DataField="FoodID" HeaderText="Food ID" InsertVisible="False" ReadOnly="True" SortExpression="FoodID" >
                     <HeaderStyle ForeColor="#666666" />
                     </asp:BoundField>
@@ -54,7 +53,6 @@
     
             <asp:Label ID="Label5" runat="server" Text="Item selected:"></asp:Label>
             <br />
-    
             <asp:Label ID="lblSelectedItem_ID" runat="server" Text=""></asp:Label>
             <br />
             <asp:Label ID="lblSelectedItem_Name" runat="server" Text=""></asp:Label>
@@ -62,9 +60,11 @@
             <asp:Label ID="lblSelectedItem_Price" runat="server" Text=""></asp:Label>
             <br />
             <asp:Label ID="lblQuantity" runat="server" Text="Quantity: "></asp:Label>
-            <asp:TextBox ID="txtQuantity" runat="server" TextMode="Number" Text="0" CssClass="auto-style1" Width="398px"></asp:TextBox><asp:Button ID="addToCart" runat="server" Text="Add to Cart" OnClick="addToCart_Click" CssClass="btn" />
+            <asp:TextBox ID="txtQuantity" runat="server" TextMode="Number" Text="0" CssClass="auto-style1" Width="398px"></asp:TextBox>
+            <asp:Button ID="addToCart" runat="server" Text="Add to Cart" OnClick="addToCart_Click" CssClass="btn" />
             <br />
-            <asp:Label ID="lblErrorMessage1" runat="server" Text=""></asp:Label>
+            <asp:Label ID="lblErrorMessage1" runat="server" Text="" ForeColor="Red"></asp:Label>
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Please enter a number greater than 0 or enter 0 to remove from cart" Display="Dynamic" ControlToValidate="txtQuantity" MinimumValue="0" Type="Integer" MaximumValue="999" ForeColor="Red"></asp:RangeValidator>
         </div>
             </td>
             <td style="vertical-align:top; width:max-content;">

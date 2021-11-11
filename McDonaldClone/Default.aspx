@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>This is the homepage</h1>
-    <form>
+    <div class="col-4">
         <asp:Label ID="lblloginName" runat="server" Text=""></asp:Label>
         <br />
         <div class="form-group">
@@ -15,5 +15,5 @@
             <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CssClass="btn btn-primary" />
-    </form>
+    </div>
 </asp:Content>

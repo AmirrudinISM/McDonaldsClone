@@ -20,6 +20,7 @@ namespace McDonaldClone {
         }
          
         protected void btnLogin_Click(object sender, EventArgs e) {
+            /*
             SqlCommand cmd = new SqlCommand("spLoginUser", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@customerName", txtUserName.Text);
@@ -44,6 +45,8 @@ namespace McDonaldClone {
             finally {
                 conn.Close();
             }
+            */
+
 
         }
     }

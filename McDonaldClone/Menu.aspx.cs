@@ -32,13 +32,20 @@ namespace McDonaldClone {
             lblSelectedItem_ID.Text = GridView1.SelectedRow.Cells[1].Text;
             lblSelectedItem_Name.Text = GridView1.SelectedRow.Cells[2].Text;
             lblSelectedItem_Price.Text = GridView1.SelectedRow.Cells[3].Text;
-
+            lblErrorMessage1.Text = "";
         }
 
         protected void addToCart_Click(object sender, EventArgs e) {
-            insertIntoCart();
-            GridViewCart.DataBind();
-            CalculateCost();
+            if(lblSelectedItem_ID.Text != ""){
+                insertIntoCart();
+                GridViewCart.DataBind();
+                CalculateCost();
+            }
+            else {
+                lblErrorMessage1.Text = "Please select food item.";
+            }
+
+            
         }
 
         void insertIntoCart() {
