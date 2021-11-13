@@ -20,32 +20,45 @@ namespace McDonaldClone {
         }
          
         protected void btnLogin_Click(object sender, EventArgs e) {
-            /*
-            SqlCommand cmd = new SqlCommand("spLoginUser", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@customerName", txtUserName.Text);
-            cmd.Parameters.AddWithValue("@customerPassword", txtPassword.Text);
+            
+            string sql = @"SELECT * FROM Users WHERE UserName = @username";
+            SqlCommand cmd = new SqlCommand(sql,conn);
+            cmd.Parameters.AddWithValue("@username", txtUserName.Text);
 
-            try {
-                conn.Open();
-                SqlDataReader sdr = cmd.ExecuteReader();
-                if (sdr.Read()) {
-                    Session["CustomerName"] = txtUserName.Text;
-                    Session["CustomerID"] = txtPassword.Text;
-                    Server.Transfer("Default.aspx");
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
 
+            if(dt.Rows.Count > 0) {
+                Object UserID = dt.Rows[0]["UserID"];
+                Object objPasswordHash = dt.Rows[0]["UserPasswordHash"];
+                Object objRole = dt.Rows[0]["IsAdmin"];
+                
+                string password = txtPassword.Text;
+                string storedPasswordHash = objPasswordHash.ToString();
+                PBKDF2Hash hash = new PBKDF2Hash(password, storedPasswordHash);
+                bool passwordCorrect = hash.PasswordCheck;
+                bool isAdmin = Convert.ToBoolean(objRole);
+
+                if (passwordCorrect) {
+                    Session["UserID"] = Convert.ToInt32(UserID);
+                    Session["UserName"] = txtUserName.Text;
+                    Session["isAdmin"] = objRole;
+                    if (isAdmin) {
+                        Response.Redirect("Orders.aspx");
+                    }
+                    else {
+                        Response.Redirect("Menu.aspx");
+                    }
                 }
                 else {
-                    Response.Write("User does not exist or incorrect password");
+                    lblloginName.Text = "Incorrect Password";
                 }
             }
-            catch {
-
+            else {
+                lblloginName.Text = "User not found.";
             }
-            finally {
-                conn.Close();
-            }
-            */
+            
 
 
         }

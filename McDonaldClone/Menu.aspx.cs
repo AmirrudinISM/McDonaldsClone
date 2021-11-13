@@ -14,18 +14,9 @@ namespace McDonaldClone {
         static double subtotal;
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connMcDonalds"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {
-                
-                GenerateSalesId();
+            if (Convert.ToBoolean(Session["isAdmin"])) {
+                Response.Redirect("Orders.aspx");
             }
-            
-        }
-
-        void GenerateSalesId() {
-            string hexTicks = DateTime.Now.Ticks.ToString("X");
-            string salesId = hexTicks.Substring(hexTicks.Length - 15, 9);
-            string dateTime = DateTime.Now.ToString();
-           
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) {
@@ -126,23 +117,26 @@ namespace McDonaldClone {
             
             string hexTicks = DateTime.Now.Ticks.ToString("X");
             string salesId = hexTicks.Substring(hexTicks.Length - 15, 9);
-            string dateTime = DateTime.Now.ToString();
 
             SqlCommand cmd = new SqlCommand("spConfirmOrder", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@orderid", salesId);
-            cmd.Parameters.AddWithValue("@orderdatetime", dateTime);
+            cmd.Parameters.AddWithValue("@orderdatetime", DateTime.Now);
             cmd.Parameters.AddWithValue("@orderprice", subtotal);
-            cmd.Parameters.AddWithValue("@customerid", DBNull.Value);
-            
-            
+          
+            if(Session["UserID"] != null) {
+                cmd.Parameters.AddWithValue("@customerid", Convert.ToInt32(Session["UserID"]));
+            }
+            else {
+                cmd.Parameters.AddWithValue("@customerid", DBNull.Value);
+            }
 
             try {
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex) {
+            catch (Exception ex) {
                 lblErrorMessage2.Text = ex.Message;
             }
             finally {
