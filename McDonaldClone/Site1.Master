@@ -61,8 +61,11 @@
         </div>
 
         <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top footer">
-            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a> & <a href="https://getbootstrap.com/docs/3.4/css/">Bootstrap.css</a></p>
             <p>Developed by Ikhmal Rabani bin Bistamam & Amirrudin Ismail bin Adlan Rahim</p>
+            <p>Developed for Prof. Dr. Shamsul Anuar bin Mokhtar, ISB42403 Web Application Development</p>
+            <hr />
+            <p>© 2021 Universiti Kuala Lumpur. All rights reserved.</p>
         </footer>
 
     </form>

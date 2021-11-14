@@ -72,6 +72,7 @@
       <DependentUpon>McDonaldClone.mdf</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
+    <Content Include="ExecutiveSummary.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="McDonald_Menu_Images\1600-x-676-%28Promo-Page%29-Revised-6.png" />
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExecutiveSummary.aspx.cs">
+      <DependentUpon>ExecutiveSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExecutiveSummary.aspx.designer.cs">
+      <DependentUpon>ExecutiveSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

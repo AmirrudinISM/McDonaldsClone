@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MyAccount.aspx.cs" Inherits="McDonaldClone.MyAccount" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>My Account</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>My Account</h1>

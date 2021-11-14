@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="McDonaldClone.Menu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+    <title>Menu</title>
     <style type="text/css">
         .auto-style1 {
             display: block;
@@ -28,8 +28,6 @@
                 <asp:ListItem Value="DESSERT">Dessert</asp:ListItem>
                 <asp:ListItem Value="DRINKS">Drinks</asp:ListItem>
             </asp:DropDownList>
-           
-            
             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="FoodID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="table" BorderStyle="None">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-light" />
@@ -50,7 +48,6 @@
                     </asp:ImageField>
                 </Columns>
             </asp:GridView>
-    
             <asp:Label ID="Label5" runat="server" Text="Item selected:"></asp:Label>
             <br />
             <asp:Label ID="lblSelectedItem_ID" runat="server" Text=""></asp:Label>

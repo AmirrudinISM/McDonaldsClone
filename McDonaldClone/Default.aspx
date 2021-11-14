@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="McDonaldClone.Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Home</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>This is the home page</h1>
+    
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -35,25 +36,22 @@
         <div class="card">
             <img class="card-img-top" src="McDonald_Menu_Images\home_promo_10394_Promo_BM_1.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title">Up to 45% Discount!</h5>
+                <p class="card-text">Use our delivery service and you'll get loads of awesome discounts! See our promos!</p>
             </div>
         </div>
         <div class="card">
             <img class="card-img-top" src="McDonald_Menu_Images\home_promo_13312_300X200_BM.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title">Order Through The McDonald's App</h5>
+                <p class="card-text">Make your orders easier by donwloading and installing the McDonald's App! Convinience at your fingertips!</p>
             </div>
         </div>
         <div class="card">
             <img class="card-img-top" src="McDonald_Menu_Images\home_promo_31640_20210728_McD_EndTag_BM_16kb.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title">Free Delivery on Your First Order!</h5>
+                <p class="card-text">Install the McDonald's app now and get your first delivery free of charge!</p>
             </div>
         </div>
     </div>
