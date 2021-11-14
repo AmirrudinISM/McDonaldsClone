@@ -13,7 +13,7 @@
             <asp:ControlParameter ControlID="GridViewMyOrders" Name="orderID" PropertyName="SelectedValue" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridViewMyOrders" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="OrderID" DataSourceID="SqlDataSourceCustomerOrders" >
+    <asp:GridView ID="GridViewMyOrders" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="OrderID" DataSourceID="SqlDataSourceCustomerOrders" OnSelectedIndexChanged="GridViewMyOrders_SelectedIndexChanged" >
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
             <asp:BoundField DataField="OrderID" HeaderText="OrderID" ReadOnly="True" SortExpression="OrderID" />
@@ -32,5 +32,7 @@
     <p><b>Subtotal: </b><asp:Label ID="lblSubtotal" runat="server" Text=""></asp:Label></p>
     <p><b>Service Charge (10%): </b><asp:Label ID="lblServiceCharge" runat="server" Text=""></asp:Label></p>
     <p><b>Service Tax (6%): </b><asp:Label ID="lblServiceTax" runat="server" Text=""></asp:Label></p>
+    <p><b>Total Before Rounding: </b><asp:Label ID="lblTotalBeforeRounding" runat="server" Text=""></asp:Label></p>
+    <p><b>Rounding: </b><asp:Label ID="lblRounding" runat="server" Text=""></asp:Label></p>
     <p><b>Grand total: </b><asp:Label ID="lblGrandTotal" runat="server" Text=""></asp:Label></p>
 </asp:Content>

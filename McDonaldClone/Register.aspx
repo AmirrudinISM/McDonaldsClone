@@ -2,14 +2,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Register New Account</h1>
-    <div class="col-4">
-        <p>Email: <asp:TextBox ID="txtUserName" runat="server" CssClass="form-control"></asp:TextBox></p>
-        <p>Password: <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox></p>
-        <br />
-        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-primary" OnClick="btnRegister_Click" />
+    <h3>Register New Account</h3>
+    <form>
+        <div class="col-4">
+            <p>Email: <asp:TextBox ID="txtUserName" runat="server" CssClass="form-control"></asp:TextBox></p>
+            <asp:RequiredFieldValidator ID="rvalidUserName" runat="server" ErrorMessage="Email cannot be empty" ControlToValidate="txtUserName" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+            <p>Password: <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox></p>
+            <asp:RequiredFieldValidator ID="rvalidPassword" runat="server" ErrorMessage="Password is required" ControlToValidate="txtPassword" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
+            <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-primary" OnClick="btnRegister_Click" />
+        </div>
+    </form>
+    <br />
+    <br />
+    <div>
+        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
     </div>
-    <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+    
     
     
 </asp:Content>

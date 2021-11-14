@@ -121,15 +121,6 @@ namespace McDonaldClone {
         protected global::System.Web.UI.WebControls.GridView GridViewCart;
 
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
         /// lblSubtotal control.
         /// </summary>
         /// <remarks>
@@ -137,15 +128,6 @@ namespace McDonaldClone {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSubtotal;
-
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
         /// lblServiceCharge control.
@@ -157,15 +139,6 @@ namespace McDonaldClone {
         protected global::System.Web.UI.WebControls.Label lblServiceCharge;
 
         /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-
-        /// <summary>
         /// lblServiceTax control.
         /// </summary>
         /// <remarks>
@@ -175,13 +148,22 @@ namespace McDonaldClone {
         protected global::System.Web.UI.WebControls.Label lblServiceTax;
 
         /// <summary>
-        /// Label4 control.
+        /// lblBeforeRounding control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label lblBeforeRounding;
+
+        /// <summary>
+        /// lblRounding control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRounding;
 
         /// <summary>
         /// lblGrandTotal control.

@@ -30,6 +30,10 @@ LEFT JOIN Users ON Orders.CustomerID = Users.UserID"></asp:SqlDataSource>
     <br />
     <b>Service tax (6%): </b><asp:Label ID="lblServiceTax" runat="server" Text=""></asp:Label>
     <br />
+    <b>Total amount before rounding: </b><asp:Label ID="lblTotalAmountBeforeRounding" runat="server" Text=""></asp:Label>
+    <br />
+    <b>Rounding: </b><asp:Label ID="lblRounding" runat="server" Text=""></asp:Label>
+    <br />
     <b>Grand Total: </b><asp:Label ID="lblGrandTotal" runat="server" Font-Size="Large" ForeColor="#009933"></asp:Label>
     <asp:SqlDataSource ID="SqlDataSourceOrderDetail" runat="server" ConnectionString="<%$ ConnectionStrings:connMcDonalds %>" SelectCommand="SELECT FoodItem.FoodName, OrderDetail.Quantity 
 FROM OrderDetail

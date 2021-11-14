@@ -17,7 +17,9 @@ namespace McDonaldClone {
             double subtotal = Convert.ToDouble(GridViewOrderList.SelectedRow.Cells[3].Text);
             double serviceCharge = 0.1 * subtotal;
             double serviceTax = 0.06 * subtotal;
-            double grandTotal = subtotal + serviceCharge + serviceTax;
+            double totalBeforeRounding = subtotal + serviceCharge + serviceTax;
+            double grandTotal = Math.Round(totalBeforeRounding, 1);
+            double rounding = grandTotal - totalBeforeRounding;
 
             lblOrderID.Text = GridViewOrderList.SelectedRow.Cells[1].Text;
             if (GridViewOrderList.SelectedRow.Cells[4].Text == "&nbsp;") {
@@ -30,6 +32,8 @@ namespace McDonaldClone {
             lblSubtotal.Text = subtotal.ToString("c2");
             lblServiceCharge.Text = serviceCharge.ToString("c2");
             lblServiceTax.Text = serviceTax.ToString("c2");
+            lblTotalAmountBeforeRounding.Text = totalBeforeRounding.ToString("c2");
+            lblRounding.Text = rounding.ToString("c2");
             lblGrandTotal.Text = grandTotal.ToString("c2");
         }
     }

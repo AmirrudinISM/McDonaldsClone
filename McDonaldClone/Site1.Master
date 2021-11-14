@@ -13,56 +13,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    
+
     <title>McDonald Clone</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    
+
     <form id="form1" runat="server">
-        <div class="float-right"><uc1:LoginStatus runat="server" id="LoginStatus1" /></div><br />
-       
+        <uc1:LoginStatus runat="server" ID="LoginStatus1" />
+        <div style="width:100%">
             <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="Default.aspx">
-                <img src="McDonald_Menu_Images/Mcdonalds_logo_PNG8.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                McDonald's
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <a class="navbar-brand" href="Default.aspx">
+                    <img src="McDonald_Menu_Images/Mcdonalds_logo_PNG8.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                    McDonald's
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                    <a class="nav-link" href="Default.aspx">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="Menu.aspx">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="MyAccount.aspx">My Account</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link disabled" href="#">About Us</a>
-                    </li>
-                </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Default.aspx">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Menu.aspx">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="MyAccount.aspx">My Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">About Us</a>
+                        </li>
+                    </ul>
                 </div>
-        </nav>
-       
-        
+            </nav>
+        </div>
+
+
+
+
         <div id="main" class="container">
             <div id="wrap">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                
                 </asp:ContentPlaceHolder>
             </div>
         </div>
-        
-            <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top footer">
-                <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-                <p>Developed by Ikhmal Rabani bin Bistamam & Amirrudin Ismail bin Adlan Rahim</p>
-            </footer>
-        
+
+        <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top footer">
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+            <p>Developed by Ikhmal Rabani bin Bistamam & Amirrudin Ismail bin Adlan Rahim</p>
+        </footer>
+
     </form>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

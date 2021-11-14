@@ -10,7 +10,7 @@ using System.Configuration;
 namespace McDonaldClone {
     public partial class Register : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-
+            lblStatus.Text = "";
         }
 
         protected void btnRegister_Click(object sender, EventArgs e) {
@@ -31,10 +31,12 @@ namespace McDonaldClone {
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 lblStatus.Text = "Status: Data successfully saved.";
+                lblStatus.CssClass = "alert alert-success";
 
             }
             catch (SqlException ex) {
                 lblStatus.Text = ex.Message;
+                lblStatus.CssClass = "alert alert-danger";
             }
             finally {
                 conn.Close();

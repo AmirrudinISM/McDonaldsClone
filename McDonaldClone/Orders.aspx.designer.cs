@@ -85,6 +85,24 @@ namespace McDonaldClone {
         protected global::System.Web.UI.WebControls.Label lblServiceTax;
 
         /// <summary>
+        /// lblTotalAmountBeforeRounding control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalAmountBeforeRounding;
+
+        /// <summary>
+        /// lblRounding control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRounding;
+
+        /// <summary>
         /// lblGrandTotal control.
         /// </summary>
         /// <remarks>

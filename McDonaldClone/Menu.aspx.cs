@@ -63,6 +63,8 @@ namespace McDonaldClone {
         void CalculateCost() {
             double serviceCharge;
             double serviceTax;
+            double amountAfterServiceAndTaxCharge;
+            double rounding;
             double grandTotal;
 
             SqlCommand cmd = new SqlCommand("spGetOrderPrice", conn);
@@ -76,10 +78,14 @@ namespace McDonaldClone {
                 subtotal = (double)cmd.ExecuteScalar();
                 serviceCharge = 0.1 * subtotal;
                 serviceTax = 0.06 * subtotal;
-                grandTotal = subtotal + serviceCharge + serviceTax;
+                amountAfterServiceAndTaxCharge = subtotal + serviceCharge + serviceTax;
+                grandTotal = Math.Round(amountAfterServiceAndTaxCharge,1);
+                rounding = grandTotal - amountAfterServiceAndTaxCharge;
                 lblSubtotal.Text = subtotal.ToString("c2");
                 lblServiceCharge.Text = serviceCharge.ToString("c2");
                 lblServiceTax.Text = serviceTax.ToString("c2");
+                lblBeforeRounding.Text = amountAfterServiceAndTaxCharge.ToString("c2");
+                lblRounding.Text = rounding.ToString("c2");
                 lblGrandTotal.Text = grandTotal.ToString("c2");
             }
             catch (SqlException ex) {
@@ -135,6 +141,18 @@ namespace McDonaldClone {
             try {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                if (Session["UserID"] != null) {
+                    lblErrorMessage2.Text = "Order placed! Redirecting to your account page...";
+                    lblErrorMessage2.Style.Add("color", "green");
+                    ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirectJS",
+                   "setTimeout(function() { window.location.replace('MyAccount.aspx') }, 5000);", true);
+                }
+                else {
+                    lblErrorMessage2.Text = "Order placed!";
+                    lblErrorMessage2.Style.Add("color", "green");
+                }
+                
+
             }
             catch (Exception ex) {
                 lblErrorMessage2.Text = ex.Message;
@@ -149,6 +167,7 @@ namespace McDonaldClone {
             ConfirmPurchase();
             GridViewCart.DataBind();
             ClearReceipt();
+           
 
         }
 

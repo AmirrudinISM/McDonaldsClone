@@ -73,6 +73,9 @@
     </Content>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="McDonald_Menu_Images\1600-x-676-%28Promo-Page%29-Revised-6.png" />
+    <Content Include="McDonald_Menu_Images\3ccbffd5481262430bff58be1cf86825.png" />
     <Content Include="McDonald_Menu_Images\beefWithCheese.png" />
     <Content Include="McDonald_Menu_Images\bigMac.png" />
     <Content Include="McDonald_Menu_Images\blueberrypie.png" />
@@ -83,7 +86,11 @@
     <Content Include="McDonald_Menu_Images\friedchicken3.png" />
     <Content Include="McDonald_Menu_Images\friedchicken5.png" />
     <Content Include="McDonald_Menu_Images\friedchicken9.png" />
+    <Content Include="McDonald_Menu_Images\home_promo_10394_Promo_BM_1.jpg" />
+    <Content Include="McDonald_Menu_Images\home_promo_13312_300X200_BM.jpg" />
+    <Content Include="McDonald_Menu_Images\home_promo_31640_20210728_McD_EndTag_BM_16kb.jpg" />
     <Content Include="McDonald_Menu_Images\icedlatte.png" />
+    <Content Include="McDonald_Menu_Images\McD-Site-Promo-Banners-%28ONLY-ENG%291600x676_5Nov2021_rev2.png" />
     <Content Include="McDonald_Menu_Images\Mcdonalds_logo_PNG8.png" />
     <Content Include="McDonald_Menu_Images\orangejuice.png" />
     <Content Include="McDonald_Menu_Images\oreoMcFlurry.png" />
@@ -107,6 +114,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>

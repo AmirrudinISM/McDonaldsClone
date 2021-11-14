@@ -79,21 +79,18 @@
                             <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" ReadOnly="True" SortExpression="SubTotal" />
                         </Columns>
                     </asp:GridView>
-                    <asp:Label ID="Label1" runat="server" Text="Subtotal: " CssClass="text-left"></asp:Label>
-                    <asp:Label ID="lblSubtotal" runat="server" Text="" CssClass="text-right"></asp:Label>
+                    <p class="text-left">Subtotal: <asp:Label ID="lblSubtotal" runat="server" Text="" CssClass="text-right"></asp:Label></p>
+                    
+                    <p>Service charge (10%): <asp:Label ID="lblServiceCharge" runat="server" Text="" CssClass="text-right"></asp:Label></p>
+                   
+                    <p>Service tax (6%): <asp:Label ID="lblServiceTax" runat="server" Text="" CssClass="text-right"></asp:Label ></p>
+
+                    <p>Total before rounding: <asp:Label ID="lblBeforeRounding" runat="server" Text="" CssClass="text-right"></asp:Label ></p>
+                    
+                    <p>Rounding: <asp:Label ID="lblRounding" runat="server" Text=""></asp:Label></p>
                     <br />
-                    <asp:Label ID="Label2" runat="server" Text="Service charge (10%): " CssClass="text-left"></asp:Label>
-                    <asp:Label ID="lblServiceCharge" runat="server" Text="" CssClass="text-right"></asp:Label>
-                    <br />
-                    <asp:Label ID="Label3" runat="server" Text="Service tax (6%): " CssClass="text-left"></asp:Label>
-                    <asp:Label ID="lblServiceTax" runat="server" Text="" CssClass="text-right"></asp:Label >
-                    <br />
-                    <h5>
-                        <asp:Label ID="Label4" runat="server" Text="Grand total: " CssClass="text-left"></asp:Label>
-                        <asp:Label ID="lblGrandTotal" runat="server" CssClass="text-right" ForeColor="#00CC00"></asp:Label>
-                    </h5>
-            
-                    <br />
+                    <h5>Grand total: <asp:Label ID="lblGrandTotal" runat="server" CssClass="text-right" ForeColor="#00CC00"></asp:Label></h5>
+                    
                     <asp:Button ID="btnConfirm" runat="server" OnClick="btnConfirm_Click" Text="Confirm Order" CssClass="btn btn-primary" />
                     <asp:Button ID="btnClearCart" runat="server" Text="Empty Cart" OnClick="btnClearCart_Click" CssClass="btn btn-secondary" />
                     <br />

@@ -12,7 +12,7 @@ namespace McDonaldClone.UserControls {
                 HyperLink1.Visible = false;
                 HyperLink2.Visible = false;
                 btnLogout.Visible = true;
-                lblUserName.Text = "Hello," + Session["UserName"].ToString() +", ID: " + Session["UserID"].ToString() + "!";
+                lblUserName.Text = "Hello," + Session["UserName"].ToString() + "!";
            }
             else {
                 HyperLink1.Visible = true;
