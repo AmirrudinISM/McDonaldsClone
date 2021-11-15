@@ -31,13 +31,40 @@ namespace McDonaldClone {
         protected global::System.Web.UI.WebControls.Label lblCustomerCount;
 
         /// <summary>
-        /// lblMainName control.
+        /// lblBurgerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMainName;
+        protected global::System.Web.UI.WebControls.Label lblBurgerName;
+
+        /// <summary>
+        /// lblBurgerCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBurgerCount;
+
+        /// <summary>
+        /// lblChickenName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblChickenName;
+
+        /// <summary>
+        /// lblChickenCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblChickenCount;
 
         /// <summary>
         /// lblDessertName control.
@@ -49,6 +76,15 @@ namespace McDonaldClone {
         protected global::System.Web.UI.WebControls.Label lblDessertName;
 
         /// <summary>
+        /// lblDessertCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDessertCount;
+
+        /// <summary>
         /// lblDrinkName control.
         /// </summary>
         /// <remarks>
@@ -56,5 +92,41 @@ namespace McDonaldClone {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDrinkName;
+
+        /// <summary>
+        /// lblDrinkCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDrinkCount;
+
+        /// <summary>
+        /// GridViewAllFoodCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewAllFoodCount;
+
+        /// <summary>
+        /// SqlDataSourceSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceSummary;
+
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

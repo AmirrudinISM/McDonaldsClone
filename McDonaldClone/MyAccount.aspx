@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MyAccount.aspx.cs" Inherits="McDonaldClone.MyAccount" %>
+﻿<%@ Page Title="My Account" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MyAccount.aspx.cs" Inherits="McDonaldClone.MyAccount" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>My Account</title>
 </asp:Content>
@@ -14,17 +14,18 @@
             <asp:ControlParameter ControlID="GridViewMyOrders" Name="orderID" PropertyName="SelectedValue" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridViewMyOrders" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="OrderID" DataSourceID="SqlDataSourceCustomerOrders" OnSelectedIndexChanged="GridViewMyOrders_SelectedIndexChanged" >
+    <asp:GridView ID="GridViewMyOrders" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="OrderID" DataSourceID="SqlDataSourceCustomerOrders" OnSelectedIndexChanged="GridViewMyOrders_SelectedIndexChanged" CssClass="table" >
         <Columns>
-            <asp:CommandField ShowSelectButton="True" />
+            <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="text-primary" />
             <asp:BoundField DataField="OrderID" HeaderText="OrderID" ReadOnly="True" SortExpression="OrderID" />
             <asp:BoundField DataField="OrderDateTime" HeaderText="OrderDateTime" SortExpression="OrderDateTime" />
             <asp:BoundField DataField="OrderPrice" HeaderText="OrderPrice" SortExpression="OrderPrice" />
         </Columns>
     </asp:GridView>
-
+    <hr />
     <p><b>Order ID: </b><asp:Label ID="lblOrderID" runat="server" Text=""></asp:Label></p>
-    <asp:GridView ID="GridViewMyOrderDetails" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceCustomerOrderDetails">
+    <p><b>Order Date & Time: </b><asp:Label ID="lblOrderDateTime" runat="server" Text=""></asp:Label></p>
+    <asp:GridView ID="GridViewMyOrderDetails" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceCustomerOrderDetails" CssClass="table">
         <Columns>
             <asp:BoundField DataField="FoodName" HeaderText="FoodName" SortExpression="FoodName" />
             <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />

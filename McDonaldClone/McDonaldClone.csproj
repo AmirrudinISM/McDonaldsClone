@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Accounts.aspx" />
     <Content Include="App_Data\McDonaldClone.mdf" />
     <Content Include="App_Data\McDonaldClone_log.ldf">
       <DependentUpon>McDonaldClone.mdf</DependentUpon>
@@ -101,11 +102,19 @@
     <Content Include="MyAccount.aspx" />
     <Content Include="Orders.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="RestaurantLocations.aspx" />
     <Content Include="Styles\StyleSheet1.css" />
     <Content Include="UserControls\LoginStatus.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounts.aspx.cs">
+      <DependentUpon>Accounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts.aspx.designer.cs">
+      <DependentUpon>Accounts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -159,6 +168,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantLocations.aspx.cs">
+      <DependentUpon>RestaurantLocations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RestaurantLocations.aspx.designer.cs">
+      <DependentUpon>RestaurantLocations.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

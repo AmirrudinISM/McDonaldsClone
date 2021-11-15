@@ -11,7 +11,14 @@ using System.Configuration;
 namespace McDonaldClone {
     public partial class Login : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-
+            if (Session["UserID"] != null) {
+                if (Convert.ToBoolean(Session["isAdmin"])) {
+                    Response.Redirect("ExecutiveSummary.aspx");
+                }
+                else {
+                    Response.Redirect("Default.aspx");
+                }
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e) {
@@ -40,7 +47,7 @@ namespace McDonaldClone {
                     Session["UserName"] = txtUserName.Text;
                     Session["isAdmin"] = objRole;
                     if (isAdmin) {
-                        Response.Redirect("Orders.aspx");
+                        Response.Redirect("ExecutiveSummary.aspx");
                     }
                     else {
                         Response.Redirect("Menu.aspx");

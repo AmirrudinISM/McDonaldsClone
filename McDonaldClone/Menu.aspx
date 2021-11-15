@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="McDonaldClone.Menu" %>
+﻿<%@ Page Title="Menu" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="McDonaldClone.Menu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Menu</title>
     <style type="text/css">
@@ -30,7 +30,7 @@
             </asp:DropDownList>
             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="FoodID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="table" BorderStyle="None">
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-light" />
+                    <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-outline-primary" />
                     <asp:BoundField DataField="FoodID" HeaderText="Food ID" InsertVisible="False" ReadOnly="True" SortExpression="FoodID" >
                     <HeaderStyle ForeColor="#666666" />
                     </asp:BoundField>
@@ -57,7 +57,7 @@
             <asp:Label ID="lblSelectedItem_Price" runat="server" Text=""></asp:Label>
             <br />
             <asp:Label ID="lblQuantity" runat="server" Text="Quantity: "></asp:Label>
-            <asp:TextBox ID="txtQuantity" runat="server" TextMode="Number" Text="0" CssClass="auto-style1" Width="398px"></asp:TextBox>
+            <asp:TextBox ID="txtQuantity" runat="server" TextMode="Number" Text="0" CssClass="auto-style1" Width="398px" min="0"></asp:TextBox>
             <asp:Button ID="addToCart" runat="server" Text="Add to Cart" OnClick="addToCart_Click" CssClass="btn" />
             <br />
             <asp:Label ID="lblErrorMessage1" runat="server" Text="" ForeColor="Red"></asp:Label>

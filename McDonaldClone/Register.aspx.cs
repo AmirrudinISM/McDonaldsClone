@@ -12,6 +12,7 @@ namespace McDonaldClone {
     public partial class Register : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
             lblStatus.Text = "";
+            
         }
 
         protected void btnRegister_Click(object sender, EventArgs e) {
@@ -34,6 +35,7 @@ namespace McDonaldClone {
                     cmd.ExecuteNonQuery();
                     lblStatus.Text = "Status: Data successfully saved.";
                     lblStatus.CssClass = "alert alert-success";
+                    Response.Redirect("Login.aspx");
 
                 }
                 catch (SqlException ex) {

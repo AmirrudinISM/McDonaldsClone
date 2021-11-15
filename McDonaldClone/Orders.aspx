@@ -1,18 +1,21 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Orders.aspx.cs" Inherits="McDonaldClone.Orders" %>
+﻿<%@ Page Title="Orders" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Orders.aspx.cs" Inherits="McDonaldClone.Orders" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Orders</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1>Order Records</h1>
+    <p class="text-primary"><a href="ExecutiveSummary.aspx">Return to home</a></p>
     <asp:SqlDataSource ID="SqlDataSourceOrders" runat="server" ConnectionString="<%$ ConnectionStrings:connMcDonalds %>" SelectCommand="SELECT Orders.OrderID, Orders.OrderDateTime, Orders.OrderPrice, Users.UserName  
 FROM [Orders]
-LEFT JOIN Users ON Orders.CustomerID = Users.UserID"></asp:SqlDataSource>
+LEFT JOIN Users ON Orders.CustomerID = Users.UserID
+ORDER BY Orders.OrderDateTime DESC"></asp:SqlDataSource>
     <asp:GridView ID="GridViewOrderList" runat="server" AllowPaging="True" AllowSorting="True" DataSourceID="SqlDataSourceOrders" OnSelectedIndexChanged="GridViewOrderList_SelectedIndexChanged" DataKeyNames="OrderID" CssClass="table table-hover" AutoGenerateColumns="False">
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
-            <asp:BoundField DataField="OrderID" HeaderText="ID" ReadOnly="True" SortExpression="OrderID" />
-            <asp:BoundField DataField="OrderDateTime" HeaderText="Date &amp; Time Placed" SortExpression="OrderDateTime" />
-            <asp:BoundField DataField="OrderPrice" HeaderText="Total Price (RM)" SortExpression="OrderPrice" />
-            <asp:BoundField DataField="UserName" HeaderText="Customer" SortExpression="UserName" />
+            <asp:BoundField DataField="OrderID" HeaderText="OrderID" ReadOnly="True" SortExpression="OrderID" />
+            <asp:BoundField DataField="OrderDateTime" HeaderText="OrderDateTime" SortExpression="OrderDateTime" />
+            <asp:BoundField DataField="OrderPrice" HeaderText="OrderPrice" SortExpression="OrderPrice" />
+            <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" nulldisplaytext="GUEST"/>
         </Columns>
     </asp:GridView>
     <b>Order ID: <asp:Label ID="lblOrderID" runat="server" Text=""></asp:Label></b>

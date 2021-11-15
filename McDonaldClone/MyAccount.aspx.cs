@@ -11,9 +11,14 @@ namespace McDonaldClone {
             if (Session["UserID"] == null) {
                 Response.Redirect("Login.aspx");
             }
+            else if (Convert.ToBoolean(Session["isAdmin"])) {
+                Response.Redirect("ExecutiveSummary.aspx");
+            }
         }
 
         protected void GridViewMyOrders_SelectedIndexChanged(object sender, EventArgs e) {
+            lblOrderID.Text = GridViewMyOrders.SelectedRow.Cells[1].Text;
+            lblOrderDateTime.Text = GridViewMyOrders.SelectedRow.Cells[2].Text;
             double subtotal = Convert.ToDouble(GridViewMyOrders.SelectedRow.Cells[3].Text);
             double serviceCharge = 0.1 * subtotal;
             double serviceTax = 0.06 * subtotal;
