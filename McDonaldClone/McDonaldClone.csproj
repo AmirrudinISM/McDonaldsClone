@@ -103,6 +103,7 @@
     <Content Include="Orders.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RestaurantLocations.aspx" />
+    <Content Include="Styles\GoogleMapsStyle.css" />
     <Content Include="Styles\StyleSheet1.css" />
     <Content Include="UserControls\LoginStatus.ascx" />
     <Content Include="Web.config" />
@@ -146,6 +147,7 @@
     <Compile Include="Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\APIKey.cs" />
     <Compile Include="MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -201,9 +203,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

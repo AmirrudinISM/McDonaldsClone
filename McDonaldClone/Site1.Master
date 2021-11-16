@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+    
     <title>McDonald Clone</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -43,7 +43,7 @@
                             <a class="nav-link" href="MyAccount.aspx">My Account</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#">About Us</a>
+                            <a class="nav-link" href="RestaurantLocations.aspx">Locations</a>
                         </li>
                     </ul>
                 </div>

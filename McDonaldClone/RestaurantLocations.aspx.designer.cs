@@ -13,12 +13,12 @@ namespace McDonaldClone {
     public partial class RestaurantLocations {
 
         /// <summary>
-        /// txt_location control.
+        /// mapFrame control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_location;
+        protected global::System.Web.UI.HtmlControls.HtmlIframe mapFrame;
     }
 }
