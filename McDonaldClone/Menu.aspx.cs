@@ -28,6 +28,7 @@ namespace McDonaldClone {
 
         protected void addToCart_Click(object sender, EventArgs e) {
             if(lblSelectedItem_ID.Text != ""){
+                lblErrorMessage2.Text = "";
                 insertIntoCart();
                 GridViewCart.DataBind();
                 CalculateCost();
@@ -105,6 +106,7 @@ namespace McDonaldClone {
             lblSelectedItem_Price.Text = "";
         }
         void ClearCart() {
+            subtotal = 0;
             SqlCommand cmd = new SqlCommand("spClearCart", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             try {
@@ -164,9 +166,15 @@ namespace McDonaldClone {
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e) {
-            ConfirmPurchase();
-            GridViewCart.DataBind();
-            ClearReceipt();
+            if(GridViewCart.Rows.Count == 0) {
+                lblErrorMessage2.Text = "Please add items to cart!";
+                lblErrorMessage2.Style.Add("color", "red");
+            }
+            else {
+                ConfirmPurchase();
+                GridViewCart.DataBind();
+                ClearReceipt();
+            }
            
 
         }
