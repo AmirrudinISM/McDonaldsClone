@@ -147,7 +147,7 @@ namespace McDonaldClone {
                     lblErrorMessage2.Text = "Order placed! Redirecting to your account page...";
                     lblErrorMessage2.Style.Add("color", "green");
                     ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirectJS",
-                   "setTimeout(function() { window.location.replace('MyAccount.aspx') }, 5000);", true);
+                   "setTimeout(function() { window.location.replace('MyAccount.aspx') }, 3000);", true);
                 }
                 else {
                     lblErrorMessage2.Text = "Order placed!";

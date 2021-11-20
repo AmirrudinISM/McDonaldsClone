@@ -12,7 +12,15 @@ namespace McDonaldClone {
     public partial class Register : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
             lblStatus.Text = "";
-            
+            if (Session["UserID"] != null) {
+                if (Convert.ToBoolean(Session["isAdmin"])) {
+                    Response.Redirect("ExecutiveSummary.aspx");
+                }
+                else {
+                    Response.Redirect("Default.aspx");
+                }
+            }
+
         }
 
         protected void btnRegister_Click(object sender, EventArgs e) {
@@ -33,9 +41,10 @@ namespace McDonaldClone {
                 try {
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    lblStatus.Text = "Status: Data successfully saved.";
+                    lblStatus.Text = "Status: Data successfully saved. Redirecting to login page...";
                     lblStatus.CssClass = "alert alert-success";
-                    Response.Redirect("Login.aspx");
+                    ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirectJS",
+                   "setTimeout(function() { window.location.replace('Login.aspx') }, 4000);", true);
 
                 }
                 catch (SqlException ex) {

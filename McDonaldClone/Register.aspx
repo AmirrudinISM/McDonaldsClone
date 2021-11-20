@@ -4,6 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h3>Register New Account</h3>
+    <div>
+        <p><asp:Label ID="lblStatus" runat="server" Text=""></asp:Label></p>
+    </div>
     <form>
         <div class="col-4">
             <p>Email: <asp:TextBox ID="txtUserName" runat="server" CssClass="form-control"></asp:TextBox></p>
@@ -16,9 +19,7 @@
     </form>
     <br />
     <br />
-    <div>
-        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
-    </div>
+    
     
     
     
