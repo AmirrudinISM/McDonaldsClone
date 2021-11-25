@@ -11,11 +11,11 @@ LEFT JOIN Users ON Orders.CustomerID = Users.UserID
 ORDER BY Orders.OrderDateTime DESC"></asp:SqlDataSource>
     <asp:GridView ID="GridViewOrderList" runat="server" AllowPaging="True" AllowSorting="True" DataSourceID="SqlDataSourceOrders" OnSelectedIndexChanged="GridViewOrderList_SelectedIndexChanged" DataKeyNames="OrderID" CssClass="table table-hover" AutoGenerateColumns="False">
         <Columns>
-            <asp:CommandField ShowSelectButton="True" />
-            <asp:BoundField DataField="OrderID" HeaderText="OrderID" ReadOnly="True" SortExpression="OrderID" />
-            <asp:BoundField DataField="OrderDateTime" HeaderText="OrderDateTime" SortExpression="OrderDateTime" />
-            <asp:BoundField DataField="OrderPrice" HeaderText="OrderPrice" SortExpression="OrderPrice" />
-            <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" nulldisplaytext="GUEST"/>
+            <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="text-primary" />
+            <asp:BoundField DataField="OrderID" HeaderText="Order ID" ReadOnly="True" SortExpression="OrderID" />
+            <asp:BoundField DataField="OrderDateTime" HeaderText="Order Date &amp; Time" SortExpression="OrderDateTime" />
+            <asp:BoundField DataField="OrderPrice" HeaderText="Price" SortExpression="OrderPrice" />
+            <asp:BoundField DataField="UserName" HeaderText="Customer Name" SortExpression="UserName" nulldisplaytext="GUEST"/>
         </Columns>
     </asp:GridView>
     <b>Order ID: <asp:Label ID="lblOrderID" runat="server" Text=""></asp:Label></b>

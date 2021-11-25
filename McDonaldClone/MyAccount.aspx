@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>My Account</h1>
-    <asp:SqlDataSource ID="SqlDataSourceCustomerOrders" runat="server" ConnectionString="<%$ ConnectionStrings:connMcDonalds %>" SelectCommand="SELECT * FROM Orders WHERE CustomerID = @customerid">
+    <asp:SqlDataSource ID="SqlDataSourceCustomerOrders" runat="server" ConnectionString="<%$ ConnectionStrings:connMcDonalds %>" SelectCommand="SELECT * FROM Orders WHERE CustomerID = @customerid ORDER BY OrderDateTime DESC">
         <SelectParameters>
             <asp:SessionParameter Name="customerid" SessionField="UserID" />
         </SelectParameters>
@@ -16,10 +16,12 @@
     </asp:SqlDataSource>
     <asp:GridView ID="GridViewMyOrders" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="OrderID" DataSourceID="SqlDataSourceCustomerOrders" OnSelectedIndexChanged="GridViewMyOrders_SelectedIndexChanged" CssClass="table" >
         <Columns>
-            <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="text-primary" />
-            <asp:BoundField DataField="OrderID" HeaderText="OrderID" ReadOnly="True" SortExpression="OrderID" />
-            <asp:BoundField DataField="OrderDateTime" HeaderText="OrderDateTime" SortExpression="OrderDateTime" />
-            <asp:BoundField DataField="OrderPrice" HeaderText="OrderPrice" SortExpression="OrderPrice" />
+            <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="text-primary" >
+<ControlStyle CssClass="text-primary"></ControlStyle>
+            </asp:CommandField>
+            <asp:BoundField DataField="OrderID" HeaderText="Order ID" ReadOnly="True" SortExpression="OrderID" />
+            <asp:BoundField DataField="OrderDateTime" HeaderText="Order Date &amp; Time" SortExpression="OrderDateTime" />
+            <asp:BoundField DataField="OrderPrice" HeaderText="Price (RM)" SortExpression="OrderPrice" />
         </Columns>
     </asp:GridView>
     <hr />
@@ -27,7 +29,7 @@
     <p><b>Order Date & Time: </b><asp:Label ID="lblOrderDateTime" runat="server" Text=""></asp:Label></p>
     <asp:GridView ID="GridViewMyOrderDetails" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceCustomerOrderDetails" CssClass="table">
         <Columns>
-            <asp:BoundField DataField="FoodName" HeaderText="FoodName" SortExpression="FoodName" />
+            <asp:BoundField DataField="FoodName" HeaderText="Food Name" SortExpression="FoodName" />
             <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
         </Columns>
     </asp:GridView>
