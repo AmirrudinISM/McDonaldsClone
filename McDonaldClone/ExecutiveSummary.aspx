@@ -82,7 +82,7 @@
     </table>
     <hr />
     <h2>Overall Sales of Items</h2>
-    <asp:GridView ID="GridViewAllFoodCount" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceSummary" CssClass="table">
+    <asp:GridView ID="GridViewAllFoodCount" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceSummary" CssClass="table" AllowSorting="True">
         <Columns>
             <asp:BoundField DataField="FoodName" HeaderText="Food Name" SortExpression="FoodName" />
             <asp:BoundField DataField="TotalSold" HeaderText="Total Sold" ReadOnly="True" SortExpression="TotalSold" NullDisplayText="0" />
