@@ -20,7 +20,7 @@ namespace McDonaldClone {
             double totalBeforeRounding = subtotal + serviceCharge + serviceTax;
             double grandTotal = Math.Round(totalBeforeRounding, 1);
             double rounding = grandTotal - totalBeforeRounding;
-
+            detail.Attributes.Add("style", "display:block");
             lblOrderID.Text = GridViewOrderList.SelectedRow.Cells[1].Text;
             if (GridViewOrderList.SelectedRow.Cells[4].Text == "&nbsp;") {
                 lblCustomerName.Text = "GUEST";

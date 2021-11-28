@@ -100,6 +100,8 @@ namespace McDonaldClone {
             lblSubtotal.Text = "RM0.00";
             lblServiceCharge.Text = "RM0.00";
             lblServiceTax.Text = "RM0.00";
+            lblBeforeRounding.Text = "RM0.00";
+            lblRounding.Text = "RM0.00";
             lblGrandTotal.Text = "RM0.00";
             lblSelectedItem_ID.Text = "";
             lblSelectedItem_Name.Text = "";

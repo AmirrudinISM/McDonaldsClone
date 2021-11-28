@@ -28,7 +28,7 @@
                 <asp:ListItem Value="DESSERT">Dessert</asp:ListItem>
                 <asp:ListItem Value="DRINKS">Drinks</asp:ListItem>
             </asp:DropDownList>
-            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="FoodID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="table" BorderStyle="None">
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="FoodID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="table table-hover" BorderStyle="None">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-outline-primary" />
                     <asp:BoundField DataField="FoodID" HeaderText="Food ID" InsertVisible="False" ReadOnly="True" SortExpression="FoodID" >
@@ -64,8 +64,8 @@
             <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Please enter a number greater than 0 or enter 0 to remove from cart" Display="Dynamic" ControlToValidate="txtQuantity" MinimumValue="0" Type="Integer" MaximumValue="999" ForeColor="Red"></asp:RangeValidator>
         </div>
             </td>
-            <td style="vertical-align:top; width:max-content;">
-                <div class="col">
+            <td style="vertical-align:top; width:500px;">
+                <div class="col card" style="margin-top:35px">
                     <h4>Sales Cart</h4>  
                     <asp:GridView ID="GridViewCart" runat="server" DataSourceID="SqlDataSourceCart" AutoGenerateColumns="False" CssClass="table table-sm">
                         <Columns>
@@ -89,6 +89,7 @@
                     <h5>Grand total: <asp:Label ID="lblGrandTotal" runat="server" CssClass="text-right" ForeColor="#00CC00"></asp:Label></h5>
                     
                     <asp:Button ID="btnConfirm" runat="server" OnClick="btnConfirm_Click" Text="Confirm Order" CssClass="btn btn-primary" />
+                    <br />
                     <asp:Button ID="btnClearCart" runat="server" Text="Empty Cart" OnClick="btnClearCart_Click" CssClass="btn btn-secondary" />
                     <br />
                     <asp:Label ID="lblErrorMessage2" runat="server" Text=""></asp:Label>

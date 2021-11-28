@@ -32,7 +32,7 @@ namespace McDonaldClone {
             lblTotalBeforeRounding.Text = amountAfterServiceAndTaxCharge.ToString("c2");
             lblRounding.Text = rounding.ToString("c2");
             lblGrandTotal.Text = grandTotal.ToString("c2");
-
+            detail.Attributes.Add("style", "display:block");
         }
     }
 }
