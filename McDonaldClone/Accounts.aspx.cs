@@ -15,10 +15,12 @@ namespace McDonaldClone {
 
         protected void GridViewCustomers_SelectedIndexChanged(object sender, EventArgs e) {
             lblUserName.Text = GridViewCustomers.SelectedRow.Cells[2].Text;
+            detail.Attributes.Add("style", "display:none");
         }
 
         protected void GridViewOrders_SelectedIndexChanged(object sender, EventArgs e) {
             lblOrderID.Text = GridViewOrders.SelectedRow.Cells[1].Text;
+            detail.Attributes.Add("style", "display:block");
         }
     }
 }

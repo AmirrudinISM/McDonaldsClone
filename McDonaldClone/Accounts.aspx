@@ -23,8 +23,8 @@
         <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label></h5>
     <asp:GridView ID="GridViewOrders" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="OrderID" DataSourceID="SqlDataSourceOrdersFromSelectedAccount" AllowPaging="True" AllowSorting="True" OnSelectedIndexChanged="GridViewOrders_SelectedIndexChanged">
         <Columns>
-            <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="text-primary" >
-<ControlStyle CssClass="text-primary"></ControlStyle>
+            <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="text-primary">
+                <ControlStyle CssClass="text-primary"></ControlStyle>
             </asp:CommandField>
             <asp:BoundField DataField="OrderID" HeaderText="OrderID" ReadOnly="True" SortExpression="OrderID" />
             <asp:BoundField DataField="OrderDateTime" HeaderText="Order Date &amp; Time" SortExpression="OrderDateTime" />
@@ -32,18 +32,21 @@
         </Columns>
     </asp:GridView>
     <hr />
-    <h5>Order:
+    <div id="detail" style="display:none" runat="server">
+        <h5>Order:
         <asp:Label ID="lblOrderID" runat="server" Text=""></asp:Label></h5>
-    <asp:SqlDataSource ID="SqlDataSourceSelectedOrder" runat="server" ConnectionString="<%$ ConnectionStrings:connMcDonalds %>" SelectCommand="SELECT FoodItem.FoodName, OrderDetail.Quantity FROM OrderDetail INNER JOIN FoodItem ON OrderDetail.FoodID = FoodItem.FoodID
+        <asp:SqlDataSource ID="SqlDataSourceSelectedOrder" runat="server" ConnectionString="<%$ ConnectionStrings:connMcDonalds %>" SelectCommand="SELECT FoodItem.FoodName, OrderDetail.Quantity FROM OrderDetail INNER JOIN FoodItem ON OrderDetail.FoodID = FoodItem.FoodID
 WHERE OrderDetail.OrderID = @orderid">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="GridViewOrders" Name="orderid" PropertyName="SelectedValue" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-    <asp:GridView ID="GridViewOrderDetails" runat="server" AutoGenerateColumns="False" CssClass="table" DataSourceID="SqlDataSourceSelectedOrder">
-        <Columns>
-            <asp:BoundField DataField="FoodName" HeaderText="Food Name" SortExpression="FoodName" />
-            <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
-        </Columns>
-    </asp:GridView>
+            <SelectParameters>
+                <asp:ControlParameter ControlID="GridViewOrders" Name="orderid" PropertyName="SelectedValue" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:GridView ID="GridViewOrderDetails" runat="server" AutoGenerateColumns="False" CssClass="table" DataSourceID="SqlDataSourceSelectedOrder">
+            <Columns>
+                <asp:BoundField DataField="FoodName" HeaderText="Food Name" SortExpression="FoodName" />
+                <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+            </Columns>
+        </asp:GridView>
+    </div>
+
 </asp:Content>
